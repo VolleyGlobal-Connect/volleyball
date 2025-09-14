@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
+.nata {
+  font-family: 'Nata Sans', sans-serif;
+}
+
+@import "tailwindcss";
