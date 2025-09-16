@@ -3,13 +3,20 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-        "outputs": [
-        ".next/**", 
-        "!.next/cache/**"
-      ]
+      "outputs": [".next/**", "!.next/cache/**"]
     },
-    "lint" : {
-        "dependsOn": ["^build"]
+    "@volleyball/contracts#build": {
+      "outputs": ["out/**", "cache/**"]
+    },
+    "@volleyball/shared#build": {
+      "dependsOn": ["@volleyball/contracts#build"],
+      "outputs": []
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "format": {
+      "cache": false
     },
     "check-types": {
       "dependsOn": ["^check-types"]

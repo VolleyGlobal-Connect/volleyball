@@ -5,16 +5,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "test": "turbo test",
-    "format": "turbo format"
+    "dev": "next dev --turbopack",
+    "build": "next build", 
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "turbo": "^2.5.6"
-  }
+  },
+  "packageManager": "pnpm@9.15.0"
 }
