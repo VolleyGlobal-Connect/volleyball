@@ -5,11 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build", 
-    "start": "next start",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+   "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "turbo format"
     
   },
   "keywords": [],

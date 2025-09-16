@@ -1,9 +1,8 @@
 "use client"
 import { MetaMaskInpageProvider } from "@metamask/providers";
-import { abi } from "@/constant/Fund.json"
-import React from 'react'
-import { useEffect, useState } from 'react';
-import { ethers, BrowserProvider, JsonRpcSigner, Contract } from "ethers";
+import { FundABI } from "@volleyball/shared";
+import { BrowserProvider, Contract, JsonRpcSigner } from "ethers";
+import { useState } from 'react';
 
 declare global {
     interface Window {
@@ -28,7 +27,7 @@ const Navbar = () => {
             const provider = new BrowserProvider(window.ethereum!);
             const signer = await provider.getSigner();
             const account = await signer.getAddress();
-            const contract = new Contract(process.env.NEXT_PUBLIC_CONTRACTADDRESS!, abi, signer)
+            const contract = new Contract(process.env.NEXT_PUBLIC_CONTRACTADDRESS!, FundABI, signer)
             setProvider(provider);
             setSigner(signer);
             setAccount(account);
