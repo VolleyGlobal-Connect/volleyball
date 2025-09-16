@@ -5,17 +5,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "build": "turbo build",
+    "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "test": "turbo test",
-    "format": "turbo format"
-    
+    "format": "turbo format",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "release-please": "^17.1.2",
     "turbo": "^2.5.6"
   },
   "packageManager": "pnpm@9.15.0"
