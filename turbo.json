@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "@volleyball/contracts#build": {
+      "outputs": ["out/**", "cache/**"]
+    },
+    "@volleyball/shared#build": {
+      "dependsOn": ["@volleyball/contracts#build"],
+      "outputs": []
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "format": {
+      "cache": false
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

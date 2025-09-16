@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true, // <-- THIS IS THE CRITICAL LINE
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+
+    /* If transpiling with TypeScript */
+    "moduleResolution": "node",
+    "module": "esnext",
+
+    /* If your code runs in the DOM */
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "exclude": ["node_modules"]
+}
