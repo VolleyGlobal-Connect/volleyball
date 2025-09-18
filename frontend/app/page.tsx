@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Volleyball from "../public/Volleyball.png"
+// import Volleyball from "../public/Volleyball.png"
 import Payment from "@/components/payment";
 export default function Home() {
 

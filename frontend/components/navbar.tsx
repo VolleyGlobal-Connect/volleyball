@@ -2,7 +2,7 @@
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { abi } from "@/constant/Fund.json"
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ethers, BrowserProvider, JsonRpcSigner, Contract } from "ethers";
 
 declare global {
@@ -17,6 +17,13 @@ const Navbar = () => {
     const [signer, setSigner] = useState<JsonRpcSigner | null>(null);
     const [contract, setContract] = useState<Contract | null>(null);
     const [account, setAccount] = useState<string | null>(null);
+    const handleDisConnect = () => {
+        setAccount(null);
+        setSigner(null);
+        setProvider(null);
+        setContract(null);
+        alert("Account Disconnected");
+    }
     const handleConnect = async () => {
         if (!window.ethereum) {
             alert("Please install MetaMask extension");
@@ -37,9 +44,16 @@ const Navbar = () => {
             console.log("Account ", account);
             console.log("provider", provider);
             console.log("contract", contract);
-        } catch (error) {
-            console.error("Failed to connect wallet:", error);
-            alert("Failed to connect wallet. Please try again.");
+        } catch (error: any) {
+            if (error.code === "ACTION_REJECTED") {
+                alert("User rejected the action");
+
+            }
+            else {
+
+                console.error("Failed to connect wallet:", error);
+                alert("Failed to connect wallet. Please try again.");
+            }
 
         }
     }
@@ -48,7 +62,7 @@ const Navbar = () => {
         <nav className='min-w-full px-6 py-4 text-xl shadow-lg nata font-medium shadow-amber-100 '>
             <div className="flex justify-between">
                 <h2>Connect your Wallet to pay in ETH</h2>
-                <button className='bg-red-400 py-1 px-4 text-white rounded-2xl' onClick={handleConnect}> {account ? "Connected" : "connect"}</button>
+                <button className='bg-red-400 py-1 px-4 text-white rounded-2xl' onClick={account ? handleDisConnect : handleConnect}> {account ? "Connected" : "connect"}</button>
             </div>
         </nav>
     )
