@@ -16,6 +16,14 @@ const Navbar = () => {
     const [signer, setSigner] = useState<JsonRpcSigner | null>(null);
     const [contract, setContract] = useState<Contract | null>(null);
     const [account, setAccount] = useState<string | null>(null);
+
+    const handleDisConnect = () => {
+        setAccount(null);
+        setSigner(null);
+        setProvider(null);
+        setContract(null);
+        alert("Account Disconnected");
+    }
     const handleConnect = async () => {
         if (!window.ethereum) {
             alert("Please install MetaMask extension");
@@ -24,21 +32,28 @@ const Navbar = () => {
         try {
 
 
-            const provider = new BrowserProvider(window.ethereum!);
-            const signer = await provider.getSigner();
-            const account = await signer.getAddress();
-            const contract = new Contract(process.env.NEXT_PUBLIC_CONTRACTADDRESS!, FundABI, signer)
-            setProvider(provider);
-            setSigner(signer);
-            setAccount(account);
-            setContract(contract);
-            console.log("Signer :", signer);
-            console.log("Account ", account);
-            console.log("provider", provider);
-            console.log("contract", contract);
-        } catch (error) {
-            console.error("Failed to connect wallet:", error);
-            alert("Failed to connect wallet. Please try again.");
+            const Provider = new BrowserProvider(window.ethereum!);
+            const Signer = await Provider.getSigner();
+            const Account = await Signer.getAddress();
+            const newContract = new Contract(process.env.NEXT_PUBLIC_CONTRACTADDRESS!, FundABI, Signer)
+            setProvider(Provider);
+            setSigner(Signer);
+            setAccount(Account);
+            setContract(newContract);
+            console.log("Signer :", Signer);
+            console.log("Account ", Account);
+            console.log("provider", Provider);
+            console.log("contract", newContract);
+        } catch (error: any) {
+            if (error.code === "ACTION_REJECTED") {
+                alert("User rejected the action");
+
+            }
+            else {
+
+                console.error("Failed to connect wallet:", error);
+                alert("Failed to connect wallet. Please try again.");
+            }
 
         }
     }
@@ -47,7 +62,7 @@ const Navbar = () => {
         <nav className='min-w-full px-6 py-4 text-xl shadow-lg nata font-medium shadow-amber-100 '>
             <div className="flex justify-between">
                 <h2>Connect your Wallet to pay in ETH</h2>
-                <button className='bg-red-400 py-1 px-4 text-white rounded-2xl' onClick={handleConnect}> {account ? "Connected" : "connect"}</button>
+                <button className='bg-red-400 py-1 px-4 text-white rounded-2xl' onClick={account ? handleDisConnect : handleConnect}> {account ? "Connected" : "connect"}</button>
             </div>
         </nav>
     )
