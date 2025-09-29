@@ -1,0 +1,30 @@
+interface VolleyballIconProps {
+  className?: string;
+}
+
+export function VolleyballIcon({ className = "w-6 h-6" }: VolleyballIconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
+      <path
+        d="M2 12h20M12 2a10 10 0 0 1 0 20M8 3a10 10 0 0 0 0 18M16 3a10 10 0 0 1 0 18"
+        fill="none"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
