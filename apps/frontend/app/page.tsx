@@ -1,12 +1,9 @@
-import { VolleyballIcon } from "../components/VolleyballIcon";
+import { ProfilesSection } from '../components/ProfilesSection';
 
-
-export default function Home() {
+export default function App() {
   return (
-      <div>
-
-          <VolleyballIcon />
-
-      </div>
+    <div className="min-h-screen bg-white">
+      <ProfilesSection />
+    </div>
   );
 }
