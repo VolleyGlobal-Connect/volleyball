@@ -6,9 +6,7 @@
       "contractName": "Fund",
       "contractAddress": "0x5de1b50f1c8ee0db0717f654387d3e4e892cf9d5",
       "function": null,
-      "arguments": [
-        "0x694AA1769357215DE4FAC081bf1f309aDC325306"
-      ],
+      "arguments": ["0x694AA1769357215DE4FAC081bf1f309aDC325306"],
       "transaction": {
         "from": "0xf4e69b74480dcc590c6ad8ee2b9429d4fcd84e7f",
         "gas": "0x101da0",

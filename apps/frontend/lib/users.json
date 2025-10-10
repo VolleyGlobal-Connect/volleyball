@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "slug": "bharatiyaVolleyballLeagueFoundation",
+    "name": "Bharatiya Volleyball League Foundation",
+    "shortDescription": "Founded in 2020 by Abhijit Bhattacharya, the Brahmaputra Volleyball League is a grassroots movement transforming communities in Assam, India. Using the power of volleyball, the BVL brings together thousands of children from diverse backgrounds to break down social barriers related to caste, gender, and ethnicity. The league not only teaches sports but also fosters unity, empowers young girls to become leaders, and promotes health and sustainability. It stands as a beacon of hope and positive change, creating a brighter future for the youth of Assam.",
+    "ytVideo": "https://www.youtube.com/watch?v=Sdx51YZ2CoM",
+    "imageUrl": "/bvl.jpg",
+    "type": "org",
+    "tag": "CURATED",
+    "websiteUrl": "https://bvl.org.in/",
+    "social": {
+      "facebook": "https://www.facebook.com/volleyassam/",
+      "linkedin": "https://www.linkedin.com/company/brahmaputra-volleyball-league/"
+    },
+    "founder": {
+      "name": "Abhijit Bhattacharya",
+      "title": "Founder & Visionary",
+      "imageUrl": "/abhijitBhattacharya.png",
+      "bio": [
+        "Abhijit Bhattacharya founded the Brahmaputra Volleyball League in 2020 with a simple yet powerful vision: to use sports as a tool for social transformation. Growing up in Assam, he witnessed firsthand the divisions that separated communities and knew there had to be a better way.",
+        "Under his leadership, the league has grown from a small local initiative to a movement that has touched thousands of lives. His unwavering commitment to equality, inclusion, and youth empowerment continues to inspire everyone involved with the organization."
+      ],
+      "quote": {
+        "text": "Through volleyball, we're not just building athletes – we're building a generation of leaders who will create a brighter, more inclusive future for all.",
+        "attribution": "— Abhijit Bhattacharya"
+      }
+    },
+    "sections": {
+      "ourMission": {
+        "heading": "Our Mission",
+        "paragraphs": [
+          "The Bharatiya Volleyball League Foundation represents a transformative force in grassroots sports development across Assam, India. Since our inception in 2020, we have been on a mission to harness the unifying power of volleyball to create lasting social change.",
+          "Our founder, Abhijit Bhattacharya, envisioned a league that goes beyond just sports – one that breaks down the invisible barriers that divide communities. Through volleyball, we're addressing deep-rooted social challenges related to caste, gender inequality, and ethnic divisions."
+        ]
+      },
+      "whatWeDo": {
+        "heading": "What We Do",
+        "items": [
+          {
+            "title": "Youth Empowerment",
+            "description": "We bring together thousands of children from diverse backgrounds, teaching them the values of teamwork, discipline, and mutual respect. Our programs create a safe environment where young people can develop their skills and discover their potential."
+          },
+          {
+            "title": "Gender Equality",
+            "description": "Our programs specifically empower young girls to become leaders both on and off the court, challenging traditional gender norms. We believe that every girl deserves the opportunity to play, lead, and excel."
+          },
+          {
+            "title": "Community Building",
+            "description": "We create safe spaces where children from different castes, religions, and ethnicities play together as one team. Volleyball becomes the common language that unites everyone, regardless of their background."
+          },
+          {
+            "title": "Health & Wellness",
+            "description": "Through sports, we promote physical fitness, mental well-being, and sustainable healthy lifestyles. We believe that a healthy body leads to a healthy mind and a brighter future."
+          }
+        ]
+      },
+      "supportUs": {
+        "heading": "Support Our Mission",
+        "description": "Your contribution helps us empower more youth through volleyball, break social barriers, and build stronger communities across Assam. Every donation makes a real difference in the lives of young people."
+      }
+    }
+  }
+]

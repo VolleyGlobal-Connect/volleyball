@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
-import {AggregatorV3Interface} from "lib/chainlink-brownie-contracts/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+
+import {AggregatorV3Interface} from
+    "lib/chainlink-brownie-contracts/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 // 0x694AA1769357215DE4FAC081bf1f309aDC325306
 import {PriceConverter} from "./PriceConverter.sol";
 
@@ -24,12 +26,10 @@ contract Fund {
     }
 
     modifier minimumAmount() {
-        require(
-            msg.value.getConversion(s_priceFeed) >= MINIMUM_USD,
-            Fund__MinimumAmtShouldBeGreaterThenZero()
-        );
+        require(msg.value.getConversion(s_priceFeed) >= MINIMUM_USD, Fund__MinimumAmtShouldBeGreaterThenZero());
         _;
     }
+
     modifier onlyOwner() {
         require(msg.sender == i_owner, Fund__NotOwner());
         _;
@@ -50,7 +50,7 @@ contract Fund {
         s_funders = new address[](0);
         uint256 amount = address(this).balance;
         s_fund_raised = 0;
-        (bool callSuccess, ) = payable(msg.sender).call{value: amount}("");
+        (bool callSuccess,) = payable(msg.sender).call{value: amount}("");
         require(callSuccess, Fund__TransactionFailed());
     }
 
@@ -69,9 +69,7 @@ contract Fund {
     /**
      *  View/Pure functions (Getters)
      */
-    function getAddressToAmountFunded(
-        address fundingAddress
-    ) external view returns (uint256) {
+    function getAddressToAmountFunded(address fundingAddress) external view returns (uint256) {
         return s_addressToAmountFunded[fundingAddress];
     }
 

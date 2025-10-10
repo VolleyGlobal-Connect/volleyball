@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "build": "echo 'Generating types from ABI...'",
-     "lint": "eslint .",
+    "build": "echo 'Generating types from ABI...'",
+    "lint": "eslint .",
     "format": "prettier --write ."
   },
   "devDependencies": {
