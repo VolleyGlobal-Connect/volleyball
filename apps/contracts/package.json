@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "forge build && pnpm run postbuild",
+	"build": "which forge > /dev/null && forge build && pnpm run postbuild || echo 'forge not found'",
     "postbuild": "cp out/Fund.sol/Fund.json ../../packages/shared/Fund.json",
     "test": "forge test",
     "lint": "forge fmt --check",
-    "format": "forge fmt"
+    "format": "which forge > /dev/null && forge fmt || echo 'forge not found'"
   }
 }

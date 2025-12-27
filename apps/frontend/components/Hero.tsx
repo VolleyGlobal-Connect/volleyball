@@ -7,11 +7,6 @@ type HeroProps = {
   primaryCtaText: string;
   onPrimaryCtaClick?: () => void;
 };
-
-function onPrimaryCtaClick() {
-  console.log('Primary CTA clicked');
-}
-
 const Hero = ({
   title,
   subtitle,
