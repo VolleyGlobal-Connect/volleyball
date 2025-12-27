@@ -12,10 +12,24 @@ import { useState } from 'react';
 function OrganizationProfile({ organization }: { organization: UserProfile }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const getYouTubeId = (url: string) => {
-    const match = url.match(/[?&]v=([^&]+)/);
-    return match ? match[1] : '';
-  };
+  const getYouTubeId = (url?: string) => {
+  if (!url) return null;
+
+  // Already an embed URL
+  if (url.includes('/embed/')) {
+    return url.split('/embed/')[1].split('?')[0];
+  }
+
+  // Short youtu.be URL
+  if (url.includes('youtu.be/')) {
+    return url.split('youtu.be/')[1].split('?')[0];
+  }
+
+  // Standard watch URL
+  const match = url.match(/[?&]v=([^&]+)/);
+  return match ? match[1] : null;
+};
+
 
   const videoId = getYouTubeId(organization.ytVideo);
 

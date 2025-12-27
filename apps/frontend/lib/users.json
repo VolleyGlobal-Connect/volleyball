@@ -60,5 +60,131 @@
         "description": "Your contribution helps us empower more youth through volleyball, break social barriers, and build stronger communities across Assam. Every donation makes a real difference in the lives of young people."
       }
     }
+  },
+  {
+  "id": 2,
+  "slug": "primeVolleyballLeague",
+  "name": "Prime Volleyball League",
+  "shortDescription": "The Prime Volleyball League (PVL) is India’s first professional franchise-based volleyball league, designed to elevate the sport’s visibility and create sustainable career opportunities for Indian athletes. By bringing together players, clubs, broadcasters, and fans, PVL bridges grassroots development and professional competition.",
+  "ytVideo": "https://youtu.be/QwkeeGJaJ68?si=QnZNnNbTrXPQnJaI",
+  "imageUrl": "/pvl.jpg",
+  "type": "org",
+  "tag": "PRO LEAGUE",
+  "websiteUrl": "https://primevolleyballleague.com/",
+  "social": {
+    "facebook": "https://www.facebook.com/PrimeVolleyballLeague",
+    "linkedin": "https://www.linkedin.com/company/prime-volleyball-league/"
+  },
+  "founder": {
+    "name": "Baseline Ventures",
+    "title": "League Promoters",
+    "imageUrl": "/ceo-pvl.jpeg",
+    "bio": [
+      "Prime Volleyball League was launched with the vision of creating a professional platform for Indian volleyball players to compete at the highest level within the country.",
+      "The league focuses on commercial sustainability while maintaining strong links to talent development and the broader volleyball ecosystem."
+    ],
+    "quote": {
+      "text": "A strong professional league is essential to inspire young players and build long-term careers in volleyball.",
+      "attribution": "— Prime Volleyball League"
+    }
+  },
+  "sections": {
+    "ourMission": {
+      "heading": "Our Mission",
+      "paragraphs": [
+        "Prime Volleyball League aims to professionalize volleyball in India by providing a high-quality competitive platform for players and teams.",
+        "The league works to increase visibility, fan engagement, and investment in the sport while supporting talent pathways across the country."
+      ]
+    },
+    "whatWeDo": {
+      "heading": "What We Do",
+      "items": [
+        {
+          "title": "Professional Competition",
+          "description": "We host India’s first franchise-based professional volleyball league featuring domestic and international talent."
+        },
+        {
+          "title": "Player Opportunities",
+          "description": "We create professional career opportunities for Indian athletes through contracts, exposure, and high-level competition."
+        },
+        {
+          "title": "Ecosystem Growth",
+          "description": "We work alongside federations, academies, and grassroots initiatives to strengthen volleyball’s overall ecosystem."
+        },
+        {
+          "title": "Fan Engagement",
+          "description": "We bring volleyball closer to fans through broadcast, digital platforms, and live events."
+        }
+      ]
+    },
+    "supportUs": {
+      "heading": "Partner With Us",
+      "description": "PVL collaborates with organizations, sponsors, and communities to grow the professional volleyball landscape in India."
+    }
   }
+}
+,
+  {
+  "id": 3,
+  "slug": "volleyballFederationOfIndia",
+  "name": "Volleyball Federation of India",
+  "shortDescription": "The Volleyball Federation of India (VFI) is the national governing body responsible for the development, promotion, and regulation of volleyball across India. Established to nurture talent and strengthen the sport at all levels, VFI oversees national teams, domestic competitions, and grassroots initiatives in collaboration with state associations.",
+  "ytVideo": "https://youtu.be/Gev-4CaEkkA?si=nDtoaEtvZGlg1n7r",
+  "imageUrl": "/vfi.jpg",
+  "type": "org",
+  "tag": "VERIFIED",
+  "websiteUrl": "https://volleyballindia.com/",
+  "social": {
+    "facebook": "https://www.facebook.com/volleyballindia",
+    "linkedin": "https://www.linkedin.com/company/volleyball-federation-of-india/"
+  },
+  "founder": {
+    "name": "—",
+    "title": "National Sports Federation",
+    "imageUrl": "/vfi-president.jpeg",
+    "bio": [
+      "The Volleyball Federation of India functions as the apex governing authority for volleyball in the country, working closely with state units, athletes, coaches, and international bodies.",
+      "Its leadership focuses on maintaining standards, expanding participation, and ensuring fair play while building long-term pathways for Indian volleyball talent."
+    ],
+    "quote": {
+      "text": "Our responsibility is to safeguard the future of volleyball in India by creating strong systems, fair opportunities, and a sustainable national structure.",
+      "attribution": "— Volleyball Federation of India"
+    }
+  },
+  "sections": {
+    "ourMission": {
+      "heading": "Our Mission",
+      "paragraphs": [
+        "The mission of the Volleyball Federation of India is to promote and govern the sport of volleyball in a structured, inclusive, and transparent manner across the country.",
+        "By strengthening domestic competitions, supporting state associations, and representing India internationally, VFI works to create a stable foundation for the sport’s growth."
+      ]
+    },
+    "whatWeDo": {
+      "heading": "What We Do",
+      "items": [
+        {
+          "title": "National Governance",
+          "description": "We regulate and oversee volleyball activities in India, ensuring alignment with international standards and fair governance practices."
+        },
+        {
+          "title": "Talent Pathways",
+          "description": "We support structured pathways from grassroots and state-level competitions to national representation."
+        },
+        {
+          "title": "Competitions & Events",
+          "description": "We organize and sanction national championships, leagues, and tournaments across age groups."
+        },
+        {
+          "title": "International Representation",
+          "description": "We represent Indian volleyball at international forums and competitions, working closely with global volleyball bodies."
+        }
+      ]
+    },
+    "supportUs": {
+      "heading": "Collaborate With Us",
+      "description": "VFI works with state associations, leagues, institutions, and partners to strengthen volleyball’s ecosystem across India."
+    }
+  }
+}
+
 ]
