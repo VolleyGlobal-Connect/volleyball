@@ -1,9 +1,9 @@
 interface SocialLinks {
+  facebook?: string;
+  linkedin?: string;
+  twitter?: string;
   youtube?: string;
   instagram?: string;
-  facebook?: string;
-  twitter?: string;
-  linkedin?: string;
 }
 
 interface FounderData {

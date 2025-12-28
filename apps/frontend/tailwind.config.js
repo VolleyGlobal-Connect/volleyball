@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        brand: {
+          primary: "#F2A11A",
+          // future-proofing
+          secondary: "#000000",
+          accent: "#FFFFFF",
+        },
+      },
       fontFamily: {
         bricolage: ["var(--font-bricolage)", "sans-serif"],
         geist: ["var(--font-geist-sans)", "sans-serif"],

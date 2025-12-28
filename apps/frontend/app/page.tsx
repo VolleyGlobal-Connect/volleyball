@@ -1,6 +1,8 @@
 "use client"
-import Hero from '@/components/Hero';
+import Hero from '../components/Hero';
 import { ProfilesSection } from '../components/ProfilesSection';
+console.log(ProfilesSection);
+
 
 export default function App() {
   return (

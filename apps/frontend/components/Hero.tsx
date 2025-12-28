@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 type HeroProps = {
   title: string;
   subtitle: string;
@@ -94,7 +94,7 @@ const Hero = ({
           </Button>
 
           {/* Trust Indicators */}
-          <p className="text-sm font-medium text-foreground color-#0f2a44 font-bricolage">
+          <p className="text-sm font-medium text-foreground text-[#0f2a44] font-bricolage">
             Transparent funding • Verified partners • Secure payments
           </p>
         </div>

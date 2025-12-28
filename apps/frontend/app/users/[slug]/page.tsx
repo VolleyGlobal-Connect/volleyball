@@ -11,11 +11,13 @@ import {
   Menu,
   Youtube,
   Instagram,
-  Twitter
+  Twitter,
+  X
 } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useState } from 'react';
+console.log( Facebook, Twitter, Linkedin, Instagram, Youtube);
 
 
 function OrganizationProfile({ organization }: { organization: UserProfile }) {
@@ -57,7 +59,7 @@ function OrganizationProfile({ organization }: { organization: UserProfile }) {
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         {children}
       </h2>
-      <div className="mt-4 h-1 w-20 bg-orange-500 mx-auto rounded-full"></div>
+      <div className="mt-4 h-1 w-20 bg-brand-primary mx-auto rounded-full"></div>
     </div>
   );
 
@@ -66,14 +68,14 @@ function OrganizationProfile({ organization }: { organization: UserProfile }) {
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors">
+            <Link href="/" className="text-2xl font-bold text-brand-primary hover:text-brand-secondary transition-colors">
               Volleyball
             </Link>
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('about')} className="font-medium text-gray-700 hover:text-orange-600 transition-colors">About</button>
-              <button onClick={() => scrollToSection('what-we-do')} className="font-medium text-gray-700 hover:text-orange-600 transition-colors">What We Do</button>
-              <button onClick={() => scrollToSection('founder')} className="font-medium text-gray-700 hover:text-orange-600 transition-colors">Our Founder</button>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white" onClick={() => scrollToSection('support')}>
+              <button onClick={() => scrollToSection('about')} className="font-medium text-gray-700 hover:text-brand-primary transition-colors">About</button>
+              <button onClick={() => scrollToSection('what-we-do')} className="font-medium text-gray-700 hover:text-brand-primary transition-colors">What We Do</button>
+              <button onClick={() => scrollToSection('founder')} className="font-medium text-gray-700 hover:text-brand-primary transition-colors">Our Founder</button>
+              <Button className="bg-brand-primary hover:bg-orange-700 text-white" onClick={() => scrollToSection('support')}>
                 <Heart className="w-4 h-4 mr-2" />
                 Support Us
               </Button>
@@ -86,10 +88,10 @@ function OrganizationProfile({ organization }: { organization: UserProfile }) {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-              <button onClick={() => scrollToSection('about')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">About</button>
-              <button onClick={() => scrollToSection('what-we-do')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">What We Do</button>
-              <button onClick={() => scrollToSection('founder')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50">Our Founder</button>
-              <Button className="bg-orange-600 hover:bg-orange-700 text-white w-full mt-2" onClick={() => scrollToSection('support')}><Heart className="w-4 h-4 mr-2" />Support Us</Button>
+              <button onClick={() => scrollToSection('about')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-primary hover:bg-gray-50">About</button>
+              <button onClick={() => scrollToSection('what-we-do')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-primary hover:bg-gray-50">What We Do</button>
+              <button onClick={() => scrollToSection('founder')} className="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-primary hover:bg-gray-50">Our Founder</button>
+              <Button className="bg-brand-primary hover:bg-orange-700 text-white w-full mt-2" onClick={() => scrollToSection('support')}><Heart className="w-4 h-4 mr-2" />Support Us</Button>
             </div>
           </div>
         )}
@@ -106,21 +108,21 @@ function OrganizationProfile({ organization }: { organization: UserProfile }) {
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">{organization.name}</h1>
             <p className="text-lg text-gray-700 leading-relaxed">{organization.shortDescription}</p>
             <div className="flex flex-wrap gap-3">
-              {organization.websiteUrl && <Button variant="outline" className="border-orange-600 text-orange-600 hover:bg-orange-50" onClick={() => window.open(organization.websiteUrl, '_blank')}><Globe className="w-4 h-4 mr-2" />Visit Website</Button>}
+              {organization.websiteUrl && <Button variant="outline" className="border-brand-primary text-brand-primary hover:bg-orange-50" onClick={() => window.open(organization.websiteUrl, '_blank')}><Globe className="w-4 h-4 mr-2" />Visit Website</Button>}
               {organization.social.facebook && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.facebook, '_blank')}><Facebook className="w-4 h-4 mr-2" />Facebook</Button>}
               {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.linkedin, '_blank')}><Linkedin className="w-4 h-4 mr-2" />LinkedIn</Button>}
-              {organization.social.facebook && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.twitter, '_blank')}><Twitter className="w-4 h-4 mr-2" />Twitter</Button>}
-              {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.instagram, '_blank')}><Instagram className="w-4 h-4 mr-2" />Instagram</Button>}
-              {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.youtube, '_blank')}><Youtube className="w-4 h-4 mr-2" />Youtube</Button>}
+              {organization.social.twitter && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.twitter, '_blank')}><Twitter className="w-4 h-4 mr-2" />Twitter</Button>}
+              {organization.social.instagram && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.instagram, '_blank')}><Instagram className="w-4 h-4 mr-2" />Instagram</Button>}
+              {organization.social.youtube && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.youtube, '_blank')}><Youtube className="w-4 h-4 mr-2" />Youtube</Button>}
             </div>
           </div>
         </div>
       </div>
 
       <div id="about" className="bg-gray-50 py-20"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><SectionHeading>{organization.sections.ourMission.heading}</SectionHeading><div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">{organization.sections.ourMission.paragraphs?.map((p, index) => <p key={index}>{p}</p>)}</div></div></div>
-      <div id="what-we-do" className="py-20"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><SectionHeading>{organization.sections.whatWeDo.heading}</SectionHeading><div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">{organization.sections.whatWeDo.items?.map((item, index) => <p key={index}><strong className="text-orange-600">{item.title}:</strong> {item.description}</p>)}</div></div></div>
-      <div id="founder" className="bg-gradient-to-br from-orange-50 to-white py-20"><div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><SectionHeading>Meet Our Founder</SectionHeading><div className="grid md:grid-cols-2 gap-12 items-center"><div className="relative"><div className="aspect-square rounded-2xl overflow-hidden shadow-xl"><img src={organization.founder.imageUrl} alt={organization.founder.name} className="w-full h-full object-cover" /></div></div><div className="space-y-6"><div><h3 className="text-2xl font-bold text-gray-900">{organization.founder.name}</h3><p className="text-orange-600 font-medium">{organization.founder.title}</p></div><div className="prose prose-lg text-gray-700 leading-relaxed space-y-4">{organization.founder.bio.map((p, index) => <p key={index}>{p}</p>)}</div><Card className="p-6 bg-gradient-to-br from-orange-600 to-orange-500 border-0 shadow-lg"><blockquote className="text-white space-y-3"><p className="text-lg italic leading-relaxed">&quot;{organization.founder.quote.text}&quot;</p><footer className="text-orange-100">{organization.founder.quote.attribution}</footer></blockquote></Card></div></div></div></div>
-      <div id="support" className="bg-white py-20 border-t border-gray-200"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><SectionHeading>{organization.sections.supportUs.heading}</SectionHeading><p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">{organization.sections.supportUs.description}</p><Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white"><Heart className="w-5 h-5 mr-2" />Make a Contribution</Button><p className="text-sm text-gray-500 mt-4">Secure payment via blockchain technology</p></div></div>
+      <div id="what-we-do" className="py-20"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><SectionHeading>{organization.sections.whatWeDo.heading}</SectionHeading><div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">{organization.sections.whatWeDo.items?.map((item, index) => <p key={index}><strong className="text-brand-primary">{item.title}:</strong> {item.description}</p>)}</div></div></div>
+      <div id="founder" className="bg-gradient-to-br from-orange-50 to-white py-20"><div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><SectionHeading>Meet Our Founder</SectionHeading><div className="grid md:grid-cols-2 gap-12 items-center"><div className="relative"><div className="aspect-square rounded-2xl overflow-hidden shadow-xl"><img src={organization.founder.imageUrl} alt={organization.founder.name} className="w-full h-full object-cover" /></div></div><div className="space-y-6"><div><h3 className="text-2xl font-bold text-gray-900">{organization.founder.name}</h3><p className="text-brand-primary font-medium">{organization.founder.title}</p></div><div className="prose prose-lg text-gray-700 leading-relaxed space-y-4">{organization.founder.bio.map((p, index) => <p key={index}>{p}</p>)}</div><Card className="p-6 bg-gradient-to-br from-brand-primary to-brand-primary border-0 shadow-lg"><blockquote className="text-white space-y-3"><p className="text-lg italic leading-relaxed">&quot;{organization.founder.quote.text}&quot;</p><footer className="text-orange-100">{organization.founder.quote.attribution}</footer></blockquote></Card></div></div></div></div>
+      <div id="support" className="bg-white py-20 border-t border-gray-200"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><SectionHeading>{organization.sections.supportUs.heading}</SectionHeading><p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">{organization.sections.supportUs.description}</p><Button size="lg" className="bg-brand-primary hover:bg-orange-700 text-white"><Heart className="w-5 h-5 mr-2" />Make a Contribution</Button><p className="text-sm text-gray-500 mt-4">Secure payment via blockchain technology</p></div></div>
     </div>
   );
 }

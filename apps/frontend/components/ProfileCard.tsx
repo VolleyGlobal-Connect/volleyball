@@ -20,7 +20,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
   const tagInfo = tagStyles[profile.tag] || tagStyles['SELF_HOSTED'];
 
   return (
-    <Card className="group relative flex flex-col overflow-hidden bg-white border-2 border-gray-200 hover:border-[#F2A11A] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <Card className="group relative flex flex-col overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
       {/* Hero Image with Overlay */}
       <div className="relative h-60 overflow-hidden">
         <ImageWithFallback
@@ -39,7 +39,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
         
         {/* Type Badge */}
         <div className="absolute bottom-3 left-3">
-          <Badge className="bg-[#F2A11A] text-white border-0 text-xs font-bold uppercase tracking-wide">
+          <Badge className="bg-brand-primary text-white border-0 text-xs font-bold uppercase tracking-wide">
             {profile.type === 'org' ? 'Organization' : 'Individual'}
           </Badge>
         </div>
@@ -49,7 +49,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
       <div className="p-6 space-y-4 flex flex-col flex-1">
         {/* Name */}
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#D88F15] transition-colors h-14">
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-brand-secondary transition-colors h-14">
             {profile.name}
           </h3>
         </div>
@@ -64,7 +64,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
         {/* Action Button */}
         <div className="pt-4 border-t border-gray-100">
           <Link href={`/users/${profile.slug}`} passHref>
-            <Button className="w-full bg-[#F2A11A] hover:bg-[#D88F15] text-white font-bold uppercase tracking-wide">
+            <Button className="w-full bg-brand-primary hover:bg-brand-secondary text-white font-bold uppercase tracking-wide">
               Learn More
               <ArrowUpRight className="w-4 h-4 ml-2" />
             </Button>
