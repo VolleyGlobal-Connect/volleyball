@@ -4,6 +4,7 @@ on:
     push:
         branches:
             - "**"
+    pull_request:
 
 jobs:
     deploy:
@@ -53,7 +54,7 @@ jobs:
 
 
             - name: Deploy to Vercel (Preview)
-              if: github.ref != 'refs/heads/main'
+              if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
               id: deploy-preview
               run: |
                 DEPLOYMENT_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} 2>&1 | grep -oP 'https://[^\s]+' | tail -1)
