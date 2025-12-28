@@ -3,7 +3,16 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import users from '@/lib/users.json';
 import { UserProfile } from '@/types/user';
-import { Facebook, Globe, Heart, Linkedin, Menu, X } from 'lucide-react';
+import {
+  Facebook,
+  Linkedin,
+  Globe,
+  Heart,
+  Menu,
+  Youtube,
+  Instagram,
+  Twitter
+} from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useState } from 'react';
@@ -100,6 +109,9 @@ function OrganizationProfile({ organization }: { organization: UserProfile }) {
               {organization.websiteUrl && <Button variant="outline" className="border-orange-600 text-orange-600 hover:bg-orange-50" onClick={() => window.open(organization.websiteUrl, '_blank')}><Globe className="w-4 h-4 mr-2" />Visit Website</Button>}
               {organization.social.facebook && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.facebook, '_blank')}><Facebook className="w-4 h-4 mr-2" />Facebook</Button>}
               {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.linkedin, '_blank')}><Linkedin className="w-4 h-4 mr-2" />LinkedIn</Button>}
+              {organization.social.facebook && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.twitter, '_blank')}><Twitter className="w-4 h-4 mr-2" />Twitter</Button>}
+              {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.instagram, '_blank')}><Instagram className="w-4 h-4 mr-2" />Instagram</Button>}
+              {organization.social.linkedin && <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50" onClick={() => window.open(organization.social.youtube, '_blank')}><Youtube className="w-4 h-4 mr-2" />Youtube</Button>}
             </div>
           </div>
         </div>

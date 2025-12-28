@@ -11,7 +11,10 @@
     "websiteUrl": "https://bvl.org.in/",
     "social": {
       "facebook": "https://www.facebook.com/volleyassam/",
-      "linkedin": "https://www.linkedin.com/company/brahmaputra-volleyball-league/"
+      "linkedin": "https://www.linkedin.com/company/brahmaputra-volleyball-league/",
+      "twitter": "https://x.com/AssamBvl",
+      "instagram": "https://www.instagram.com/bvl_assam/",
+      "youtube": "https://www.youtube.com/@volleyball.foundation"
     },
     "founder": {
       "name": "Abhijit Bhattacharya",
@@ -72,8 +75,11 @@
   "tag": "PRO LEAGUE",
   "websiteUrl": "https://primevolleyballleague.com/",
   "social": {
-    "facebook": "https://www.facebook.com/PrimeVolleyballLeague",
-    "linkedin": "https://www.linkedin.com/company/prime-volleyball-league/"
+    "youtube": "https://www.youtube.com/@PrimeVolleyballLeague",
+    "instagram": "https://www.instagram.com/primevolley/?hl=en",
+    "facebook": "https://www.facebook.com/PrimeVolley/",
+    "twitter": "https://x.com/PrimeVolley",
+    "linkedin": "https://www.linkedin.com/company/primevolley/?originalSubdomain=in"
   },
   "founder": {
     "name": "Baseline Ventures",
@@ -135,8 +141,12 @@
   "tag": "VERIFIED",
   "websiteUrl": "https://volleyballindia.com/",
   "social": {
-    "facebook": "https://www.facebook.com/volleyballindia",
-    "linkedin": "https://www.linkedin.com/company/volleyball-federation-of-india/"
+    "facebook": "https://www.facebook.com/indiavfi/",
+    "linkedin": "https://www.linkedin.com/in/vasavan-kunnappata-71841b47/?originalSubdomain=in",
+    "twitter": "https://x.com/FederationVfi",
+    "instagram": "https://www.instagram.com/vfi_india/",
+    "youtube": "https://www.youtube.com/@volleyballfederationindia-4424"
+
   },
   "founder": {
     "name": "—",
