@@ -1,7 +1,7 @@
 "use client"
 
-import usersData from '../lib/users.json';
-import { UserProfile } from '../types/user';
+import usersData from '@/lib/users.json';
+import { UserProfile } from '@/types/user';
 import { useEffect, useState } from 'react';
 import { ProfileCard } from './ProfileCard';
 import { VolleyballIcon } from './VolleyballIcon';
