@@ -50,9 +50,9 @@ export function ProfilesSection() {
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Support the Future of
-            <span className="block text-orange-500 relative">
+            <span className="block text-brand-primary relative">
               Volleyball in India
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-500 rounded-full"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-brand-primary rounded-full"></div>
             </span>
           </h2>
           

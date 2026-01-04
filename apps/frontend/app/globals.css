@@ -57,6 +57,9 @@ html {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-primary: #F2A11A;
+  --color-brand-secondary: #000000;
+  --color-brand-accent: #FFFFFF;
 }
 
 :root {
