@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/VolleyGlobal-Connect/volleyball/compare/v1.0.0...v1.1.0) (2026-01-04)
+
+
+### Features
+
+* add vitest testing framework with initial component tests ([2c7ea93](https://github.com/VolleyGlobal-Connect/volleyball/commit/2c7ea93f7d00b738450cfc5fad2b2ccbc91f2d9a))
+
 ## 1.0.0 (2025-12-28)
 
 
