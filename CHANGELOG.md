@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/VolleyGlobal-Connect/volleyball/compare/v1.0.0...v1.1.0) (2026-01-08)
+
+
+### Features
+
+* add vitest testing framework with initial component tests ([2c7ea93](https://github.com/VolleyGlobal-Connect/volleyball/commit/2c7ea93f7d00b738450cfc5fad2b2ccbc91f2d9a))
+* implement getYouTubeId function and add comprehensive tests ([#16](https://github.com/VolleyGlobal-Connect/volleyball/issues/16)) ([189206e](https://github.com/VolleyGlobal-Connect/volleyball/commit/189206e690af47c272a2bbceddc8d9e6153c58d1))
+
 ## 1.0.0 (2025-12-28)
 
 
