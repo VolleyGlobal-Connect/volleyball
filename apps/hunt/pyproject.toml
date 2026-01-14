@@ -1,0 +1,36 @@
+[project]
+name = "hunt"
+version = "0.1.0"
+description = "Volleyball data collector using Groq Compound agent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "groq>=0.11.0",
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langsmith>=0.2.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "apscheduler>=3.10.0",
+    "pydantic-settings>=2.6.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.28.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hunt"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
