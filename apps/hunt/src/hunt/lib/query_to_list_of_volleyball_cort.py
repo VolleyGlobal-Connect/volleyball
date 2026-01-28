@@ -3,7 +3,11 @@
 import os
 from groq import Groq
 from dotenv import find_dotenv, load_dotenv
-from OSMPythonTools.api import Api, ApiResult
+from OSMPythonTools.overpass import Overpass, overpassQueryBuilder
+from OSMPythonTools.nominatim import Nominatim
+
+overpass = Overpass()
+nominatim = Nominatim()
 
 find_dotenv()
 
@@ -67,30 +71,107 @@ def random_function(query: list[str]):
     :type query: list[str]
     """
     
-
+    osm_results = search_function(query[0])
     response = client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"location: {query[0], query[1], query[2]}\n\n{query[3]}"}
+            {
+                "role": "user",
+                "content": f"""
+                TARGET_LOCATION: {query[0]}
+                TYPE: {query[3]}
+
+            RAW OSM DATA:
+            {osm_results}
+            """
+            }
         ],
         temperature=0.1,
         max_tokens=4096,
     )
-
     return response.choices[0].message
 
-def search_function(query:str):
-    pass 
 
 
+def search_function(query: str):
+    # 1️⃣ Geocode location
+    place_results = nominatim.query(query)
+    places = list(place_results)
+
+    if not places:
+        raise ValueError(f"Location '{query}' not found in Nominatim")
+
+    first_place = places[0]
+    json_data = first_place.toJSON()
+    lat = float(json_data['lat'])
+    lon = float(json_data['lon'])
+
+    # 2️⃣ Build raw Overpass QL query
+    delta = 0.05  # ~5km radius
+    south = lat - delta
+    north = lat + delta
+    west = lon - delta
+    east = lon + delta
+
+    overpass_query = f"""
+    (
+      node["leisure"="pitch"]["sport"="volleyball"]({south},{west},{north},{east});
+      way["leisure"="pitch"]["sport"="volleyball"]({south},{west},{north},{east});
+      relation["leisure"="pitch"]["sport"="volleyball"]({south},{west},{north},{east});
+    );
+    out center;
+    """
+
+    # 3️⃣ Execute query
+    result = overpass.query(overpass_query)
+
+    # 4️⃣ Normalize results
+    facilities = []
+
+    for el in result.elements():
+        tags = el.tags() or {}
+
+        facilities.append({
+            "name": tags.get("name", "Unnamed Facility"),
+            "feature_type": "leisure=pitch / sport=volleyball",
+            "description": tags.get("description", "No description"),
+            "lat": el.centerLat() if el.centerLat() else el.lat(),
+            "lon": el.centerLon() if el.centerLon() else el.lon(),
+        })
+
+    return facilities
+
+
+
+
+# if __name__ == "__main__":
+#     api = Api()
+#     way:ApiResult = api.query('way/5887599')
+
+#     print(way.apiVersion)
+#     print(way.id)
+#     print(way.members)
+#     print(way.attribution)
+#     print(way.tags)
 
 if __name__ == "__main__":
-    api = Api()
-    way:ApiResult = api.query('way/5887599')
+    # 1️⃣ Define your search location and type
+    TARGET_LOCATION = "Dehradun, India"
+    TYPE = "court"  # can be "academy", etc.
 
-    print(way.apiVersion)
-    print(way.id)
-    print(way.members)
-    print(way.attribution)
-    print(way.tags)
+    # 2️⃣ Search OSM for volleyball facilities
+    facilities = search_function(TARGET_LOCATION)
+
+    # 3️⃣ Check if we found anything
+    if not facilities:
+        print("No volleyball facilities found.")
+    else:
+        print("Raw OSM results:")
+        for f in facilities:
+            print(f)  # prints each facility as a dict
+
+    # 4️⃣ Optional: pass to Groq for Markdown formatting
+    formatted_table = random_function([TARGET_LOCATION, "", "", TYPE])
+    print("\nFormatted Markdown Table:")
+    print(formatted_table.content)
